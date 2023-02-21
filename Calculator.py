@@ -11,7 +11,7 @@ import keyboard
 field_text=""
 nahrada = 0
 
-# Window
+# Window = zde tvoříme základní okno a velikost pole
 
 window = Tk()
 window.geometry("400x250")
@@ -21,13 +21,15 @@ field.grid(row=1, column=1, columnspan=7)
 
 # Základ
 
-def add_to_field(add):
+#vkládání čísel a znamének do pole
+def add_to_field(add): 
     global field_text
     field_text = field_text+str(add)
     field.delete("1.0", "end")
     field.insert("1.0", field_text)
    # nahrada = field_text
 
+# funkce pro výpočet
 def calculate():
     global field_text
     result = str(eval(field_text))
@@ -35,6 +37,7 @@ def calculate():
     field.insert("1.0", result)
     field_text = result
 
+ # funkce pro vyčištění pole
 def clear():
     global field_text
     global nahrada
@@ -43,7 +46,7 @@ def clear():
     field.delete ("1.0", "end")
 
 # Funkce
-
+# zde používáme knihovnu math pro matematické úlohy
 def odmocnina():
     global field_text
     sqrt = (math.sqrt(float(field_text)))
@@ -94,7 +97,7 @@ def cotg():
     field_text = str(cotg)
 
 
-
+# tvoření tlačítek a jejich funkce
 button_1 = tk.Button(window, text="1", command = lambda: add_to_field(1), width=3, font=("Times new roman", 15))
 button_2 = tk.Button(window, text="2", command = lambda: add_to_field(2), width=3, font=("Times new roman", 15))
 button_3 = tk.Button(window, text="3", command = lambda: add_to_field(3), width=3, font=("Times new roman", 15))
@@ -127,6 +130,7 @@ button_cotg = tk.Button(window, text="cotg", command = lambda: cotg(), width=3, 
 button_clear = tk.Button(window, text="Clear", command = lambda: clear(), width=7, font=("Times new roman", 15))
 button_rovna_se = tk.Button(window, text="=", command = lambda: calculate(), width=7, font=("Times new roman", 15))
 
+# umístění jednotlivých tlačítek do okna
 button_1.grid(row = 4, column= 1)
 button_2.grid(row = 4, column= 2)
 button_3.grid(row = 4, column= 3)
@@ -163,6 +167,7 @@ button_clear.grid(row = 7, column= 4, columnspan=2)
 ### Key press ###
 #################
 
+# funkce bind a knihovna keyboard, pro počítání pomocí klávesnice
 ### Cisla ###
 window.bind('1', lambda event: add_to_field(1))
 window.bind('2', lambda event: add_to_field(2))
