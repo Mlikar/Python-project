@@ -1,0 +1,5 @@
+Funkce, které jsou potøeba použít:
+import tkinter as tk
+from tkinter import *
+import math
+import keyboard
