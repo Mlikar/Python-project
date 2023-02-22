@@ -1,5 +1,4 @@
 
-import tkinter as tk 
 
 field_text=""  # proměná do které, vkládáme čísla a znaménka, které chceme v poli
 
