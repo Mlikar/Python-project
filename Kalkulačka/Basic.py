@@ -1,8 +1,8 @@
 
 
-field_text=""  # proměná do které, vkládáme čísla a znaménka, které chceme v poli
+field_text=""  # Proměná do které, vkládáme čísla a znaménka, které chceme v poli
 
-# tato funkce slouží k přidávání čísel a znamének do pole (field)
+# Tato funkce slouží k přidávání čísel a znamének do pole (field)
 def add_to_field(add, field):
     global field_text
     field_text = field_text+str(add)
@@ -10,8 +10,8 @@ def add_to_field(add, field):
     field.insert("1.0", field_text)
 
 
-# funkce pro finální výpočet příkladu
-# proměná result slouží k tomu, abychom pak s výsledkem mohli počítat dále 
+# Funkce pro finální výpočet příkladu
+# Proměná result slouží k tomu, abychom pak s výsledkem mohli počítat dále 
 def calculate(field):
     global field_text
     result = str(eval(field_text))
@@ -19,7 +19,7 @@ def calculate(field):
     field.insert("1.0", result)
     field_text = result
 
- # funkce pro vyčištění pole a proměných
+ # Funkce pro vyčištění pole a proměných
 def clear(field):
     global field_text
     global nahrada
