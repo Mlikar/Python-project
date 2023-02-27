@@ -6,6 +6,15 @@ import Basic
 # Zde používáme knihovnu math pro matematické úlohy
 # Tyto funkce fungují podobně jako funkce calculate, při použit vyhodí rovnou výsledek, avšak počítají pouze s jedním číslem
 
+"""
+Function.py
+Vkládáme knihovnu "math", která slouží k pokročilejším matematickým funkcím (mocnina, odmocnina,
+faktoriál a goniometrické funkce) a dále soubor "Basic.py", díky kterému používáme proměnnou "field_text".
+
+Každá funkce funguje podobně jako funkce "calculate", až na to, že jsou schopné brát pouze 
+jedno číslo a rovnou ho vypočítá. Nelze je vkládat do rovnice.
+"""
+
 # Funkce pro odmocninu 
 def odmocnina(field):
     sqrt = math.sqrt(float(Basic.field_text))
