@@ -4,7 +4,18 @@ from tkinter import*
 from Basic import *
 from Function import *
 
-
+"""
+Window.py
+Vkládáme soubory "Basic.py" a "Function.py", díky kterým, voláme potřebné funkce.
+První knohivna "tkinter", která slouží vytvoření okna, pole a tlačítek.    
+Druhá knihovna "keyboard", která slouží ke spouštění tlačítka skrze klávesnici.
+"""
+ 
+ 
+"""
+První odstavec vytváří okno, díky dříve zmíněné knihovně "tkinter" a dále pole "field",
+díky které vidíme, co jsme vložili do kalkulačky.
+"""
  
 # Window
 # Tvoření samotného okna, "geometry" slouží k celkové velikost okna
@@ -14,7 +25,11 @@ window.geometry("400x250")
 field = tk.Text(window, height= 2, width=21, font=("Times new roman", 20))
 field.grid(row=1, column=1, columnspan=7)
 
-
+"""
+Druhý  odstavec vytváří opět díky "tkinter" veškerá tlačítka.
+Tlačítka slouží k volání funkcí ze souborů "Basic.py" a "Function.py", k zapisování
+čísel a základním znamének do pole, a také k výslednému počítání.
+"""
 
 # Button commands
 # Zde tvoříme jednotlivá tlačítka, zároveň jim udaváme co mají v sobě napsané, font a hlavně jejich funkci
@@ -56,6 +71,9 @@ button_cotg = tk.Button(window, text="cotg", command=lambda: cotg(field), width=
 button_clear = tk.Button(window, text="Clear", command=lambda: clear(field), width=7, font=("Times new roman", 15))
 button_rovnase = tk.Button(window, text="=", command=lambda: calculate(field), width=7, font=("Times new roman", 15))
 
+"""
+Funkce grid nám slouží k umístění jednodtlivích tlačítek v okně.
+"""
 
 # Umístění jednotlivých tlačítek do okna
 button_1.grid(row = 4, column= 1)
@@ -68,7 +86,6 @@ button_7.grid(row = 6, column= 1)
 button_8.grid(row = 6, column= 2)
 button_9.grid(row = 6, column= 3)
 button_0.grid(row = 7, column= 2)
-
 
 button_plus.grid(row = 4, column= 4)
 button_minus.grid(row = 4, column= 5)
@@ -97,6 +114,12 @@ button_clear.grid(row = 7, column= 4, columnspan=2)
 #################
 
 # Zde požíváme funkci bind a knihovnu keyboard, abychom mohli použít klávesnici k použití naší kalkulačky
+
+"""
+V poslední části používáme funkci "bind" a knihovnu "keyboard", ty slouží k
+používání klakulačky  pomocí klávesnice.
+Objí slouží k volání přímo funkcí, nikoliv tlačítka.
+"""
 
 ### Cisla ###
 window.bind('1', lambda event: add_to_field(1, field))
